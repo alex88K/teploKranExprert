@@ -106,6 +106,7 @@ b
 	margin: .6em 0
 	padding: 0 35px
 	line-height: 46px
+	border-radius: 0
 	border: 1px solid transparent
 	background-color: transparent
 	color: #fff
@@ -165,7 +166,10 @@ input[type="password"]
 	line-height: 46px
 	border: 1px solid #85929c
 	color: #fff
+	box-shadow: none
 	background-color: transparent
+	border-radius: 0
+	-webkit-appearance: none;
 	transition: all .25s ease
 	&:focus
 		border: 1px solid #fff
@@ -278,7 +282,8 @@ input.error
 		margin-top: 50px
 
 .promo-right
-	padding: 48px 60px
+	margin-left: 70px
+	padding: 45px 60px
 	border: 5px solid $orange
 	.promo-title
 		font-size: 28px
@@ -474,7 +479,6 @@ input.error
 				text-transform: none
 		.project-desc
 			color: #fff
-			white-space: pre
 		&:hover
 			z-index: 10
 			flex: 1.5 1
@@ -502,27 +506,30 @@ input.error
 .service-list
 	.tile
 		position: relative
+		display: block
 		height: 270px
 		margin-bottom: 30px
 		padding: 25px 28px 40px 28px
 		overflow: hidden
 		background-color: $bg-b
-		&:hover .overlay
-			top: 0
-			visibility: visible
-		.overlay
-			z-index: 2
-			position: absolute
-			top: -300px
-			left: 0
-			visibility: hidden
-			width: 100%
+		&:hover .overlay,
+		&:focus .overlay
 			height: 100%
+			opacity: 1
+		.overlay
+			z-index: 5
+			opacity: 0
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 0
 			padding: 30px 30px 20px 30px
 			background-color: $orange
 			transition: all .3s ease-out
 			h3,
 			.h3
+				margin-bottom: 1.5em
 				color: #fff
 			.link
 				position: absolute
@@ -536,8 +543,12 @@ input.error
 					color: $bg-b
 				span
 					font-size: 24px
+		.overlay:hover
+			height: 100%
+			opacity: 1
 		h3,
 		.h3
+			margin-bottom: 1.5em 
 			font-size: 20px
 			font-weight: 500
 			color: $text
@@ -545,8 +556,8 @@ input.error
 			line-height: 1.5
 		ul
 			list-style-type: none
-			margin: 0
-			padding: 0
+			margin: 1em 0
+			padding: 6px 0 0 0
 			li
 				position: relative
 				margin: 0
@@ -590,6 +601,7 @@ input.error
 			position: absolute
 			left: 50%
 			bottom: 70px
+			width: 260px
 			transform: translateX(-50%)
 
 .slick-prev,
@@ -647,11 +659,17 @@ input.error
 
 .partner-slider-item
 	height: 110px
-	margin: 0 50px
+	margin: 0
 	line-height: 110px
 	text-align: center
 	outline: none
 	img 
+		max-width: 100%
+		height: 110px
+		padding: 0 5px
+		line-height: 110px
+		text-align: center
+		outline: none
 		opacity: .4
 		display: inline-block
 		height: auto

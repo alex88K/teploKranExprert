@@ -26,6 +26,7 @@
 		margin-top: 50px
 
 	.promo-right
+		margin-left: 15px
 		padding: 40px 50px
 
 	.advantages
@@ -152,6 +153,13 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.flex-column-reverse
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column-reverse !important
+		.col-xs-12:first-child
+			padding-top: 60px
+
 	.main-nav
 		display: none
 
@@ -222,14 +230,13 @@
 			bottom: 26px
 			right: 30px
 	
-	.main-footer
-		.contact-b-item + .contact-b-item
-			margin-left: 0
-
 	.projects-list
-		height: 320px
-		.project-item:hover
-			flex: 3 1
+		height: auto
+		flex-direction: column
+		.project-item 
+			min-height: 200px
+			a
+				padding: 45px 20px 50px 40px
 
 	.service-list 
 		.tile2x
@@ -241,13 +248,19 @@
 		margin-top: 80px
 
 	.main-footer 
+		.logo
+			margin-bottom: 40px
+			img
+				width: 250px !important
+		.contact-b-item + .contact-b-item
+			margin-left: 0
 		.contact-form-b
 			width: 100%
-			margin-top: 35px
-			input[type=email],
-			input[type=password], 
-			input[type=phone], 
-			input[type=text]
+			margin-top: -100px
+			input[type="email"],
+			input[type="password"], 
+			input[type="phone"], 
+			input[type="text"]
 				width: 100%
 				max-width: 100%
 				padding-right: 170px
@@ -270,9 +283,6 @@
 		top: -40px
 		right: 10%
 
-	.main-footer .logo img
-		width: 250px
-
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 580px)
 	.btn
@@ -286,7 +296,7 @@
 	input[type="password"], 
 	input[type="phone"], 
 	input[type="text"]
-		padding: 0 15px
+		padding: 0 15px !important
 
 	.logo img
 		width: 170px
@@ -353,7 +363,6 @@
 			position: static
 
 	.projects-list
-		flex-direction: column
 		height: auto
 		.project-item a
 			padding: 35px 20px 35px 40px

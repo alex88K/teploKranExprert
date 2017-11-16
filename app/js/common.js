@@ -25,7 +25,6 @@ $(function() {
 	$(".partner-slider").slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		variableWidth: true,
 		infinite: true,
 		nextArrow: '<button type="button" class="slick-next"><svg class="arrow-i arrow-next-i"><use xlink:href="#arrow-next"></use></svg></button>',
 		prevArrow: '<button type="button" class="slick-prev"><svg class="arrow-i arrow-prev-i"><use xlink:href="#arrow-next"></use></svg></button>',
