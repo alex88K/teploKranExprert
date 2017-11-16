@@ -1,5 +1,6 @@
 @import "libs"
 @import "vars"
+@import "sprite"
 
 *
 	-webkit-box-sizing: border-box
@@ -11,19 +12,19 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 body input:focus:required:invalid,
@@ -35,22 +36,22 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+	background-color: #fff
 
 body
 	position: relative
 	font-size: 16px
 	min-width: 320px
-	line-height: 1.6
+	line-height: 1.5
 	font-family: $font
 	overflow-x: hidden
 	color: $text
 	opacity: 1
 	&.ishome 
 		.main-header 
-			z-index: 1
 			position: absolute
 			width: 100%
-
+			background-color: transparent
 		.promo
 			min-height: 700px
 			padding-top: 190px
@@ -95,36 +96,25 @@ b
 
 .main-header
 	position: relative
-	
-.top-line
-	min-height: 55px;
-	border-bottom: 1px solid #25445C
-	.contact-b
-		padding-top: 18px
-
-.contact-b-item + .contact-b-item
-	margin-left: 30px 
-
-.contact-b-item
-	color: $sec-text-ondark
-
-.logo 
-	display: block
-	margin-top: 30px
-	img
-		width: 300px
-		height: auto
+	padding-bottom: 25px
+	background-color: $blue
 
 .btn
 	display: inline-block
 	height: 50px
-	padding: 0 30px
+	min-width: 170px
+	margin: .6em 0
+	padding: 0 35px
 	line-height: 46px
 	border: 1px solid transparent
 	background-color: transparent
 	color: #fff
 	font-size: 16px
 	font-weight: 500
+	text-align: center
+	transition: all .25s ease
+	&.btn-med
+		min-width: 210px
 	&.btn-wt,
 	&.btn-t,
 		border: 1px solid #fff
@@ -134,6 +124,7 @@ b
 			border-color: $orange
 			background-color: $orange
 			color: #fff
+			outline: none
 	&.btn-t
 		border: 1px solid $orange
 		color: $orange
@@ -146,7 +137,8 @@ b
 		&:active
 			border: 1px solid $orange-h
 			background-color: $orange-h
-	&:btn-w
+			outline: none
+	&.btn-w
 		border: 1px solid #fff
 		color: $orange
 		background-color: #fff
@@ -155,20 +147,42 @@ b
 		&:active
 			color: $orange
 			background-color: $bg-b
+			outline: none
+
+.btn-group
+	text-align: center
+
+.form-group
+	margin-bottom: 20px
 
 input[type="text"],
 input[type="email"],
 input[type="phone"],
 input[type="password"]
+	width: 255px
 	height: 50px
 	padding: 0 20px 0 30px
 	line-height: 46px
 	border: 1px solid #85929c
+	color: #fff
+	background-color: transparent
+	transition: all .25s ease
 	&:focus
 		border: 1px solid #fff
+		outline: none
+
+.input.input-light
+	border: 1px solid #fff
+	&:focus
+		border: 1px solid $dark
+		outline: none
+		color: $title-b
 
 input.error
 	border: 1px solid #f81d17
+
+.nowrap
+	white-space: nowrap
 
 .modal-btn
 	padding: 0
@@ -176,35 +190,95 @@ input.error
 	border: none
 	border-bottom: 1px dotted
 	background-color: transparent
+	&:hover,
+	&:focus
+		outline: none
+		color: $orange-h !important
+
+.arrow-next-i,
+.arrow-prev-i
+	width: 16px
+	height: 16px
+	fill: $orange		
+
+.arrow-prev-i
+	transform: rotate(-180deg)
+
+.check-i
+	fill: $orange
+
+.icon
+	position: relative
+	top: 3px
+	margin-right: 10px
+	
+.svg-pin-dims 
+	width: 15px
+	height: 21px
+	fill: $sec-text
+
+.svg-mail-dims,
+.svg-call-dims
+	width: 20px
+	height: 15px
+	fill: $orange
+
+.steps-icon
+	display: block
+	width: 50px
+	height: 50px
+	margin: 0 0 0 70px
+
+.top-line
+	min-height: 55px
+	border-bottom: 1px solid #25445C
+	.contact-b
+		padding-top: 13px
+
+.contact-b-item + .contact-b-item
+	margin-left: 30px 
+
+.contact-b-item
+	color: $sec-text-ondark
+	&.modal-btn
+		color: $orange
+
+.logo 
+	display: block
+	margin-top: 30px
+	img
+		width: 300px
+		height: auto
 
 .main-nav
-	margin-top: 25px
+	margin-top: 28px
 	text-align: right
 
 .main-nav-item
 	display: inline-block
-	padding: 5px 0 5px 40px
+	padding: 5px 0 5px 36px
 	color: #fff
 
 .promo
 	min-height: 700px
 
 .promo-left 
-	margin-top: 70px
+	margin-top: 74px
 	p
 		margin-bottom: .4em
 		font-size: 24px
 		color: #fff
 	strong
+		display: block
 		text-transform: uppercase
 		color: $orange
 		font-size: 32px
 		font-weight: 500
 	.btn
-		margin-top: 48px
+		margin-top: 50px
 
 .promo-right
-	padding: 50px 60px
+	padding: 48px 60px
 	border: 5px solid $orange
 	.promo-title
 		font-size: 28px
@@ -221,7 +295,7 @@ input.error
 	padding: 80px 0
 
 .section-title
-	margin-bottom: 20px
+	margin: 0 0 20px 0
 	padding-bottom: 3px
 	padding-left: 30px
 	font-size: 28px
@@ -238,7 +312,7 @@ input.error
 		padding: 0
 		list-style-type: decimal
 		li
-			margin-bottom: .26em
+			margin-bottom: .44em
 			padding-left: 1.2em
 			p
 				margin: .5em 0 .8em 0
@@ -249,7 +323,8 @@ input.error
 .advantages 
 	.container
 		position: relative
-		padding-bottom: 130px
+		padding-left: 40px
+		padding-bottom: 50px
 		&:before 
 			content: ''
 			position: absolute
@@ -262,37 +337,609 @@ input.error
 		&:after 
 			content: ''
 			position: absolute
-			top: 250px
-			left: 170px
-			width: 400px
-			height: 250px
+			top: 232px
+			left: 146px
+			width: 432px
+			height: 282px
 			background-image: url(../img/adv-2.jpg)
 			background-repeat: no-repeat
 			border: 16px solid #fff
+	.section-title
+		margin-bottom: 32px
 	.section-content
 		margin-left: 25px
 	.asterisk
 		margin-left: 35px
 
 .steps-section 
+	margin-bottom: 110px
+	padding-bottom: 20px
 	background-color: $bg-b
+	.container
 	.steps-list
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: flex-start
+		margin-left: 10px
+		padding-top: 25px
 		list-style-type: none
 		counter-reset: steps
 		li
+			flex-basis: 25%
 			position: relative
 			display: inline-block
-			width: 24%
-			height: 160px
+			margin: 0 0 45px 0
+			padding-right: 1.5em
+			padding-left: 1.5em
+			line-height: 1.5
+			color: $text
 			&:before
+				z-index: -1
 				counter-increment: steps
 				content: counter(steps)
 				position: absolute
-				top: -30px
-				left: -20px
+				top: -20px
+				left: -12px
 				font-size: 130px
 				font-weight: bold
 				color: $light
 				line-height: 1
+			.steps-icon
+				margin-bottom: 8px
+	.contact-form-b
+		position: absolute
+		bottom: -150px
+		right: 0
+
+.contact-form-b
+	z-index: 5 
+	position: relative
+	width: 570px
+	padding: 25px 64px 35px 64px
+	background-color: $orange
+	.input
+		margin-right: 10px
+	p
+		margin: .8em 0
+		color: $text
+		a
+			font-weight: 500
+			color: #fff
+			text-transform: uppercase
+			&:hover
+				color: $bg-b
+		&.white
+			color: #fff
+			font-weight: 500
+
+	
+.contact-f 
+	margin-top: .8em
+
+.contact-f-title
+	font-size: 28px
+	color: #fff
+	font-weight: 500
+
+.projects
+	.btn-group .btn
+		margin: 1em 0 .2em 0
+
+.projects-list
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	align-items: stretch
+	justify-content: space-between
+	height: 385px
+	margin: 30px 0 32px 0
+	padding: 0
+	list-style-type: none
+	overflow: hidden
+	.project-item
+		position: relative
+		flex: 1 1
+		width: 100%
+		height: 100%
+		margin: 0
+		background-color: $sec-text
+		background-position: center center
+		background-size: cover
+		overflow: hidden
+		transition: all .4s ease-in-out
+		&:after
+			content: ''
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0,0)
+			transition: all .3s ease
+		a 
+			z-index: 10
+			position: relative
+			display: block
+			width: 100%
+			height: 100%
+			padding: 45px 20px 20px 40px
+		.project-title
+			margin-bottom: 10px
+			text-transform: uppercase
+			color: #fff
+			font-weight: 500
+			div
+				text-transform: none
+		.project-desc
+			color: #fff
+			white-space: pre
+		&:hover
+			z-index: 10
+			flex: 1.5 1
+		&:nth-child(1):hover
+			&:after
+				background-color: rgba(1,22,39,.4)
+		&:nth-child(2):hover
+			&:after
+				background-color: rgba(122,137,153,.4)
+		&:nth-child(3):hover
+			&:after
+				background-color: rgba(252,136,41,.4)
+		&:nth-child(4):hover
+			&:after
+				background-color: rgba(122,137,153,.4)
+		&:nth-child(5):hover
+			&:after
+				background-color: rgba(21,58,97,.4)
+
+.services
+	padding-bottom: 50px
+	.section-desc
+		margin: 30px 0 45px 38px
+
+.service-list
+	.tile
+		position: relative
+		height: 270px
+		margin-bottom: 30px
+		padding: 25px 28px 40px 28px
+		overflow: hidden
+		background-color: $bg-b
+		&:hover .overlay
+			top: 0
+			visibility: visible
+		.overlay
+			z-index: 2
+			position: absolute
+			top: -300px
+			left: 0
+			visibility: hidden
+			width: 100%
+			height: 100%
+			padding: 30px 30px 20px 30px
+			background-color: $orange
+			transition: all .3s ease-out
+			h3,
+			.h3
+				color: #fff
+			.link
+				position: absolute
+				bottom: 50px
+				right: 30px
+				font-weight: 500
+				color: #fff
+				text-align: right
+				line-height: 1.2
+				&:hover
+					color: $bg-b
+				span
+					font-size: 24px
+		h3,
+		.h3
+			font-size: 20px
+			font-weight: 500
+			color: $text
+		p
+			line-height: 1.5
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li
+				position: relative
+				margin: 0
+				padding-left: 30px
+				font-size: 16px
+				color: $text
+				&:after
+					content: ''
+					position: absolute
+					top: .8em
+					left: 0
+					width: 12px
+					height: 2px
+					background-color: $orange
+	.tile2x
+		height: 570px
+		padding: 90px 50px 140px 65px
+		background-color: $sec-text-ondark
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		h3,
+		.h3
+			margin-top: 0
+			margin-bottom: 1.5em
+			font-size: 28px
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li
+				margin-bottom: .2em
+				padding-left: 50px
+				font-size: 18px
+				&:after
+					content: ''
+					top: .8em
+					width: 20px
+					height: 2px
+		.btn 
+			position: absolute
+			left: 50%
+			bottom: 70px
+			transform: translateX(-50%)
+
+.slick-prev,
+.slick-next
+	position: absolute
+	top: -46px
+	right: 0
+	width: 35px
+	height: 35px
+	background-color: transparent
+	font-size: 0
+	border: 1px solid $orange
+	transition: all .25s ease
+	&:before 
+		display: none
+	&:hover
+		background-color: $orange
+		.arrow-i
+			fill: #fff
+.slick-prev
+	left: inherit
+	right: 40px
+
+.cert
+	background-color: $bg-b
+	.section-content
+		margin-left: 35px
+
+.cert-slider
+	height: 265px
+	margin-top: 30px
+	.slick-list
+		margin-left: -26px
+
+.cert-slider-item
+	float: left
+	a
+		display: block
+		width: 180px
+		margin-left: 12px
+	img
+		display: block
+
+.partners
+	.btn
+		margin-left: 35px
+
+.partner-slider
+	position: relative
+	margin-bottom: 30px
+	padding-top: 25px
+	.slick-prev,
+	.slick-next
+		top: -40px
+
+.partner-slider-item
+	height: 110px
+	margin: 0 50px
+	line-height: 110px
+	text-align: center
+	outline: none
+	img 
+		opacity: .4
+		display: inline-block
+		height: auto
+		vertical-align: middle
+		transition: all .2s ease-in
+		-webkit-filter: grayscale(100%)
+    	filter: grayscale(100%)
+	img:hover
+    	opacity: 1
+    	-webkit-filter: grayscale(0)
+    	filter: grayscale(0)
+
+
+// Footer
+
+.main-footer
+	background-color: $blue
+	.container
+		position: relative
+		min-height: 380px
+		padding-top: 30px
+		padding-bottom: 15px
+	.logo
+		margin-bottom: 45px
+	.contact-b
+		margin-bottom: 35px
+	.contact-b-item
+		margin: 0 30px .3em 0
+	.contact-form-b
+		position: absolute
+		top: -100px
+		right: 15px
+		bottom: inherit
+	.link
+		color: $sec-text
+		border-bottom: 1px solid
+		transition: all .3s ease
+		&:hover
+			color: #fff
+	.link + .link 
+		margin-left: 45px
+	.links
+		position: relative
+		top: 295px
+		text-align: right
+
+.copyright
+	color: $sec-text
+
+// Modal
+
+.modal
+	z-index: -5 
+	opacity: 0
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background-color: $blue
+
+.modal-body
+	opacity: 0
+	position: relative
+	top: 50%
+	width: 570px
+	margin: auto
+	text-align: center
+	transition: all .8s ease
+	p
+		margin: 1em 0 2em 0
+		color: $sec-text-ondark
+
+.modal-active
+	overflow: hidden
+
+.modal.modal-active
+	z-index: 2000
+	opacity: 1
+	overflow: hidden !important
+
+	.modal-body
+		top: 50%
+		transform: translateY(-50%)
+		opacity: 1
+
+.modal-title
+	font-size: 32px
+	color: #fff
+	font-weight: 500
+	text-transform: uppercase
+	span 
+		color: $orange
+	.check-i
+		display: block
+		width: 100px
+		height: 100px
+		margin: 0 auto 20px auto
+
+.close-btn
+	position: absolute
+	top: -30%
+	right: -10%
+	width: 40px
+	height: 40px
+	cursor: pointer
+	background-color: transparent
+	border: none
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 50%
+		width: 4px
+		height: 30px
+		background-color: $orange
+		transition: all .3s ease
+	&:after
+		content: ''
+		transform: rotate(45deg)
+	&:before
+		content: ''
+		transform: rotate(-45deg)
+	&:hover
+		&:before,
+		&:after
+			background-color: $orange-h
+			transform: rotate(-45deg)
+		&:before
+			transform: rotate(45deg)
+
+.modal-f
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"]
+		width: 355px
+
+// Mobile
+
+.mob-menu 
+	display: none 
+	visibility: hidden
+	opacity: 0
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: auto
+	transform: translateZ(-100)
+	transition: all .3s ease
+	.close-btn
+		top: 25px
+		left: 15px
+		&:focus
+			outline: none
+	a,
+	.modal-btn
+		opacity: 0
+		transform: translateX(-50px)
+		transition: all .3s ease
+
+	.contact-b
+		.contact-b-item
+			margin-left: 0
+			font-size: 16px
+			&.modal-btn
+				margin-top: 1.5em
+				margin-left: 20px
+
+.mob-menu-overlay
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background: $blue
+   pointer-events: none
+
+.mob-menu-inner
+	z-index: 1
+	position: absolute
+	height: 100%
+	width: 100%
+	left: 0
+	top: 0
+	padding: 70px 0 25px 0
+	-webkit-overflow-scrolling: touch
+	overflow-y: scroll
+
+.mob-menu-active 
+	overflow: hidden
+
+.mob-menu a:hover 
+	color: $orange
+
+.mob-menu a:before 
+	display: none
+
+.navbar-toggle
+  display: none
+  z-index: 1000
+  position: absolute
+  top: 6px
+  right: 15px
+  width: 60px
+  height: 44px
+  margin: 0
+  padding: 0
+  transition-duration: 0.5s
+  background: transparent
+  border: none
+  outline: none
+  border-radius: 0
+  cursor: pointer
+
+.navbar-toggle.menu-active .icon
+  background: transparent
+
+.navbar-toggle.menu-active .icon:before 
+	transform: rotateZ(45deg) translate(10px, 4px)
+
+.navbar-toggle.menu-active .icon:after 
+	transform: rotateZ(-45deg) translate(10px, -7px)
+
+.navbar-toggle.menu-active:hover 
+	cursor:pointer 
+
+.navbar-toggle .icon
+	position: absolute
+	height: 4px
+	width: 45px
+	top: 18px
+	left: 6.5px
+	background-color: $orange
+
+.navbar-toggle .icon:before
+	position: absolute
+	width: 45px
+	height: 4px
+	background-color: $orange
+	content: ""
+	top: -11px
+	left: 0px
+	transition: all .3s ease 
+
+.navbar-toggle .icon:after
+	position: absolute
+	width: 45px
+	height: 4px
+	background-color: $orange
+	content: ""
+	top: 11px
+	left: 0
+	transition: all .3s ease 
+
+// Animation
+
+.slideInUp 
+	-webkit-animation-name: slideInUp
+	animation-name: slideInUp
+	-webkit-animation-duration: 1s
+	animation-duration: 1s
+	-webkit-animation-fill-mode: both
+	animation-fill-mode: both
+
+@-webkit-keyframes slideInUp 
+	0% 
+		-webkit-transform: translateY(100%)
+		transform: translateY(100%)
+		visibility: visible
+	100% 
+		-webkit-transform: translateY(0)
+		transform: translateY(0)
+
+@keyframes slideInUp 
+	0% 
+		-webkit-transform: translateY(100%)
+		transform: translateY(100%)
+		visibility: visible
+	100% 
+		-webkit-transform: translateY(0)
+		transform: translateY(0)
+
+ 
+
 
 @import "media" // Всегда в конце

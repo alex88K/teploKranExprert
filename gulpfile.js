@@ -1,6 +1,7 @@
 var gulp           = require('gulp'),
 		gutil          = require('gulp-util' ),
 		sass           = require('gulp-sass'),
+		svgSprite 		= require('gulp-svg-sprite'),
 		browserSync    = require('browser-sync'),
 		concat         = require('gulp-concat'),
 		uglify         = require('gulp-uglify'),
@@ -28,7 +29,10 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/js/common.min.js', // Всегда в конце
+		'app/libs/slick/slick.min.js',
+		'app/libs/maskedInput/maskedInput.min.js',
+		'app/libs/fancybox/dist/jquery.fancybox.min.js',
+		'app/js/common.min.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
@@ -57,10 +61,27 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
-	gulp.watch('app/sass/**/*.sass', ['sass']);
+gulp.task('watch', ['sass', 'js', 'svg-sprite', 'browser-sync'], function() {
+	gulp.watch(['app/sass/**/*.sass'], ['sass']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
+});
+
+gulp.task('svg-sprite', function() {
+	return gulp.src('app/img/svg-icons/*.svg')
+		.pipe(svgSprite({
+			mode: {
+				symbol: {
+					sprite: '../sprite.svg', 
+					render: {
+						scss: {
+							dest: '../../sass/_sprite.scss'
+						}
+					}
+				}
+			}
+		}))
+		.pipe(gulp.dest('app/img'));
 });
 
 gulp.task('imagemin', function() {
@@ -94,8 +115,8 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
+		host:      'develop11.co.nf',
+		user:      '2135552',
 		password:  'userpassword',
 		parallel:  10,
 		log: gutil.log
