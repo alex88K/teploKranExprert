@@ -30,21 +30,17 @@ $(function() {
 		prevArrow: '<button type="button" class="slick-prev"><svg class="arrow-i arrow-prev-i"><use xlink:href="#arrow-next"></use></svg></button>',
 		responsive: [{
 			breakpoint: 1200,
-			setting: {
-				slidesToShow: 3,
-				variableWidth: false
-			},
-			breakpoint: 992,
 			settings: {
-				slidesToShow: 2,
-				variableWidth: false,
-				centerMode: true
+				slidesToShow: 3
+			},
+			breakpoint: 982,
+			settings: {
+				slidesToShow: 2
 			},
 			breakpoint: 600,
 			settings: {
-				slidesToShow: 1,
-				variableWidth: false,
-			},
+				slidesToShow: 1
+			}
 		}]
 	});
 

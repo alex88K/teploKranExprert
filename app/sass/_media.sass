@@ -153,6 +153,15 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.projects-list
+		height: auto
+		flex-direction: column
+		.project-item 
+			min-height: 200px
+			a
+				padding: 45px 20px 50px 40px
+
+@media only screen and (max-width : 767px)
 	.flex-column-reverse
 		display: flex
 		flex-wrap: wrap
@@ -229,14 +238,6 @@
 			position: absolute
 			bottom: 26px
 			right: 30px
-	
-	.projects-list
-		height: auto
-		flex-direction: column
-		.project-item 
-			min-height: 200px
-			a
-				padding: 45px 20px 50px 40px
 
 	.service-list 
 		.tile2x
@@ -276,12 +277,10 @@
 
 	.modal-body
 		width: 100%
-		padding-left: 15px
-		padding-right: 15px
 
 	.close-btn
-		top: -40px
-		right: 10%
+		top: 15px
+		right: 30px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 580px)
@@ -400,6 +399,9 @@
 	.main-footer .contact-form-b .btn
 		position: static
 
+	.modal-title
+		font-size: 24px
+
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 420px)
 	.modal-f
@@ -407,6 +409,9 @@
 		input[type="tel"],
 		input[type="text"]
 			width: 100%
+
+	.modal-title
+		font-size: 20px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

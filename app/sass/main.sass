@@ -169,7 +169,7 @@ input[type="password"]
 	box-shadow: none
 	background-color: transparent
 	border-radius: 0
-	-webkit-appearance: none;
+	-webkit-appearance: none
 	transition: all .25s ease
 	&:focus
 		border: 1px solid #fff
@@ -332,6 +332,7 @@ input.error
 		padding-bottom: 50px
 		&:before 
 			content: ''
+			display: block
 			position: absolute
 			top: 0
 			left: -200px
@@ -341,6 +342,7 @@ input.error
 			background-repeat: no-repeat
 		&:after 
 			content: ''
+			display: block
 			position: absolute
 			top: 232px
 			left: 146px
@@ -704,6 +706,7 @@ input.error
 		right: 15px
 		bottom: inherit
 	.link
+		padding: 0
 		border: none
 		background-color: transparent
 		color: $sec-text
@@ -733,19 +736,47 @@ input.error
 	bottom: 0
 	width: 100%
 	height: 100%
-	background-color: $blue
 
 .modal-body
 	opacity: 0
 	position: relative
-	top: 50%
 	width: 570px
+	max-height: 100%
 	margin: auto
+	padding-left: 15px
+	padding-right: 15px
 	text-align: center
 	transition: all .8s ease
 	p
 		margin: 1em 0 2em 0
 		color: $sec-text-ondark
+
+.modal-wide .modal-body
+	width: 100%
+	text-align: left
+
+.modal-overlay
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: $blue
+
+.modal-wrap
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	justify-content: center
+	position: absolute
+	z-index: 1
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	padding: 25px 15px 25px 15px
+	-webkit-overflow-scrolling: touch
+	overflow-y: auto
 
 .modal-active
 	overflow: hidden
@@ -754,10 +785,7 @@ input.error
 	z-index: 2000
 	opacity: 1
 	overflow: hidden !important
-
 	.modal-body
-		top: 50%
-		transform: translateY(-50%)
 		opacity: 1
 
 .modal-title
@@ -774,7 +802,8 @@ input.error
 		margin: 0 auto 20px auto
 
 .close-btn
-	position: absolute
+	z-index: 10
+	position: fixed
 	top: 5%
 	right: 5%
 	width: 40px
