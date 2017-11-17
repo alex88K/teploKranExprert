@@ -156,17 +156,6 @@ b
 .form-group
 	margin-bottom: 20px
 
-.modal-btn
-	padding: 0
-	color: $orange
-	border: none
-	border-bottom: 1px dotted
-	background-color: transparent
-	&:hover,
-	&:focus
-		outline: none
-		color: $orange-h
-
 input[type="text"],
 input[type="email"],
 input[type="phone"],
@@ -198,6 +187,17 @@ input.error
 
 .nowrap
 	white-space: nowrap
+
+.modal-btn
+	padding: 0
+	color: $orange
+	border: none
+	border-bottom: 1px dotted
+	background-color: transparent
+	&:hover,
+	&:focus
+		outline: none
+		color: $orange-h !important
 
 .arrow-next-i,
 .arrow-prev-i
@@ -773,8 +773,8 @@ input.error
 
 .close-btn
 	position: absolute
-	top: 5%
-	right: 5%
+	top: -30%
+	right: -10%
 	width: 40px
 	height: 40px
 	cursor: pointer
@@ -899,7 +899,7 @@ input.error
 	transform: rotateZ(-45deg) translate(10px, -7px)
 
 .navbar-toggle.menu-active:hover 
-	cursor: pointer 
+	cursor:pointer 
 
 .navbar-toggle .icon
 	position: absolute

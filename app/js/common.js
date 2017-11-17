@@ -50,7 +50,7 @@ $(function() {
 
 // Modals
 
-	$("[data-modal]").on("click", function() {
+	$(".modal-btn").on("click", function() {
 		var modal = $(this).attr('data-modal');
 		$("."+modal).addClass("modal-active");
 		$('body').addClass('modal-active');
