@@ -92,7 +92,7 @@
 							<div class="promo-left">
 								<p>Подбор инженерного решения, проектирование, поставка оборудования, монтаж и обслуживание</p>
 								<strong>Котельных всех типов!</strong>
-								<a href="/" class="btn btn-wt">Получить бесплатную консультацию</a>
+								<button class="btn btn-wt" data-modal="modal-consultation">Получить бесплатную консультацию</button>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -365,7 +365,7 @@
 							</form>
 						</div>
 						<div class="links">
-							<a href="#" class="link">Политика конфиденциальности</a>
+							<button class="link" data-modal="modal-policy">Политика конфиденциальности</button>
 							<a href="#" class="link">Информация</a>
 						</div>
 					</div>
@@ -376,8 +376,8 @@
 
 	<!-- Modals -->
 	<div id="modal-callback" class="modal modal-callback">
+		<div class="close-btn"></div>
 		<div class="modal-body">
-			<div class="close-btn"></div>
 			<div class="modal-title">Заказать <span>обратный звонок</span></div>
 			<p>Это бесплатно и ни к чему вас не обязывает!<br/>Оставьте свои контактные данные и мы сами свяжемся с вами.</p>
 			<form action="#" class="modal-f callback-f">
@@ -388,8 +388,8 @@
 		</div>	
 	</div>
 	<div id="modal-consultation" class="modal modal-consultation">
+		<div class="close-btn"></div>
 		<div class="modal-body">
-			<div class="close-btn"></div>
 			<div class="modal-title">Заказать <span>консультацию</span></div>
 			<p>Это бесплатно и ни к чему вас не обязывает!<br/>Оставьте свои контактные данные и мы сами свяжемся с вами.</p>
 			<form action="#" class="modal-f callback-f">
@@ -399,9 +399,20 @@
 			</form>
 		</div>	
 	</div>
-	<div id="modal-success" class="modal modal-success">
+	<div id="modal-policy" class="modal modal-policy">
+		<div class="close-btn"></div>
 		<div class="modal-body">
-			<div class="close-btn"></div>
+			<div class="modal-title">Политика <span>конфиденциальности</span></div>
+			<p>Это бесплатно и ни к чему вас не обязывает!<br/>Оставьте свои контактные данные и мы сами свяжемся с вами.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo reiciendis consectetur ipsa maiores nobis tempore eligendi beatae quod asperiores earum omnis quibusdam, blanditiis sapiente quis labore optio. Aut quia, quae totam rerum mollitia tenetur voluptas quo unde, nesciunt explicabo dolorem excepturi error sit obcaecati placeat libero expedita possimus odit. Sit ad aliquid animi repellat veniam in doloribus incidunt consequatur, magni mollitia tempora deserunt itaque cumque illo distinctio est accusantium facilis suscipit assumenda, voluptatibus quis, minus at. Unde commodi laboriosam sapiente sint nobis sequi quas aspernatur, dolorum tenetur dolore deserunt obcaecati dolorem aperiam dicta eos, similique in cum, saepe, esse corporis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo reiciendis consectetur ipsa maiores nobis tempore eligendi beatae quod asperiores earum omnis quibusdam, blanditiis sapiente quis labore optio. Aut quia, quae totam rerum mollitia tenetur voluptas quo unde, nesciunt explicabo dolorem excepturi error sit obcaecati placeat libero expedita possimus odit. Sit ad aliquid animi repellat veniam in doloribus incidunt consequatur, magni mollitia tempora deserunt itaque cumque illo distinctio est accusantium facilis suscipit assumenda, voluptatibus quis, minus at. Unde commodi laboriosam sapiente sint nobis sequi quas aspernatur, dolorum tenetur dolore deserunt obcaecati dolorem aperiam dicta eos, similique in cum, saepe, esse corporis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo reiciendis consectetur ipsa maiores nobis tempore eligendi beatae quod asperiores earum omnis quibusdam, blanditiis sapiente quis labore optio. Aut quia, quae totam rerum mollitia tenetur voluptas quo unde, nesciunt explicabo dolorem excepturi error sit obcaecati placeat libero expedita possimus odit. Sit ad aliquid animi repellat veniam in doloribus incidunt consequatur, magni mollitia tempora deserunt itaque cumque illo distinctio est accusantium facilis suscipit assumenda, voluptatibus quis, minus at. Unde commodi laboriosam sapiente sint nobis sequi quas aspernatur, dolorum tenetur dolore deserunt obcaecati dolorem aperiam dicta eos, similique in cum, saepe, esse corporis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo reiciendis consectetur ipsa maiores nobis tempore eligendi beatae quod asperiores earum omnis quibusdam, blanditiis sapiente quis labore optio. Aut quia, quae totam rerum mollitia tenetur voluptas quo unde, nesciunt explicabo dolorem excepturi error sit obcaecati placeat libero expedita possimus odit. Sit ad aliquid animi repellat veniam in doloribus incidunt consequatur, magni mollitia tempora deserunt itaque cumque illo distinctio est accusantium facilis suscipit assumenda, voluptatibus quis, minus at. Unde commodi laboriosam sapiente sint nobis sequi quas aspernatur, dolorum tenetur dolore deserunt obcaecati dolorem aperiam dicta eos, similique in cum, saepe, esse corporis.</p>
+		</div>	
+	</div>
+	<div id="modal-success" class="modal modal-success">
+		<div class="close-btn"></div>
+		<div class="modal-body">
 			<div class="modal-title">
 				<svg class="check-i"><use xlink:href="#check"></use></svg><span>Отправлено</span></div>
 			<p>Мы скоро свяжемся с вами!</p>
