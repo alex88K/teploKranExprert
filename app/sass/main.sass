@@ -183,7 +183,10 @@ input[type="password"]
 		color: $title-b
 
 input.error
-	border: 1px solid #f81d17
+	border: 1px solid #f81d17 !important
+
+input.input-light.error
+	border: 2px solid #f81d17 !important
 
 .nowrap
 	white-space: nowrap
@@ -422,6 +425,7 @@ input.error
 
 	
 .contact-f 
+	position: relative
 	margin-top: .8em
 
 .contact-f-title
@@ -699,18 +703,21 @@ input.error
 	.contact-b
 		margin-bottom: 35px
 	.contact-b-item
-		margin: 0 30px .3em 0
+		display: inline-block
+		margin: 0 30px .4em 0
 	.contact-form-b
 		position: absolute
 		top: -100px
 		right: 15px
 		bottom: inherit
 	.link
+		margin-bottom: .4em
 		padding: 0
 		border: none
 		background-color: transparent
 		color: $sec-text
 		border-bottom: 1px solid
+		outline: none !important
 		transition: all .3s ease
 		&:hover
 			color: #fff
@@ -720,6 +727,11 @@ input.error
 		position: relative
 		top: 295px
 		text-align: right
+	.links-left
+		display: none
+		position: static
+		margin: 35px 0
+		text-align: left
 
 .copyright
 	color: $sec-text

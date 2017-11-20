@@ -2,9 +2,7 @@ $(function() {
 	$("[data-fancybox]").fancybox();
 
 	$(".navbar-toggle, .mob-menu .close-btn").on("click", function(e) {
-		$(".mob-menu").toggleClass("opened");
-		$(".navbar-toggle").toggleClass("menu-active");
-		$("body").toggleClass("mob-menu-active");
+		mobMenuToggle();
 	});
 
 // Sliders
@@ -48,31 +46,35 @@ $(function() {
 
 	$("[data-modal]").on("click", function() {
 		var modal = $(this).attr('data-modal');
-		$("."+modal).addClass("modal-active");
-		$('body').addClass('modal-active');
 
-		if ($(this).closest( ".mob-menu" ).length > 0) {
-			$(".mob-menu").toggleClass("opened");
-			$(".navbar-toggle").toggleClass("menu-active");
-			$("body").toggleClass("mob-menu-active");
-		}
+		modalToggle(modal);
 	});
 
 	$(".close-btn").on("click", function() {
-		$(".modal").removeClass("modal-active modal-animate");
-		$(".modal").addClass('out');
-		$('body').removeClass('modal-active');
+		$(".modal, body").removeClass("modal-active");
 	});
 
 // AJAX Form submit
 
 	$(document).on('af_complete', function(event,response) {
-		var form_id = response.form.parents('.modal').attr('id');
+		var form_id = '' || response.form.parents('.modal').attr('id');
+		var modalSuccess = "modal-success";
+
+		console.log( form_id );
+
 		if (response.success) {
-			$('#'+form_id).modal('hide');
-			$('.modal-success').modal('show');
+			if( form_id ) {
+				modalToggle(form_id);
+			}
+
+			modalToggle(modalSuccess);
+
+			var timer = setTimeout(function() { 
+				modalToggle(modalSuccess) 
+			}, 5000);
 		}
 	});
+
 
 // Mask
 
@@ -82,3 +84,18 @@ $(function() {
 	
 });
 
+function modalToggle(modalWindow) {
+	var modal = modalWindow || "modal";
+
+	$("body, ." + modal).toggleClass("modal-active");
+
+	if( $(".mob-menu").hasClass("opened") ) {
+		mobMenuToggle();
+	}
+}
+
+function mobMenuToggle() {
+	$(".mob-menu").toggleClass("opened");
+	$(".navbar-toggle").toggleClass("menu-active");
+	$("body").toggleClass("mob-menu-active");
+}
