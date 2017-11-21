@@ -60,8 +60,6 @@ $(function() {
 		var form_id = '' || response.form.parents('.modal').attr('id');
 		var modalSuccess = "modal-success";
 
-		console.log( form_id );
-
 		if (response.success) {
 			if( form_id ) {
 				modalToggle(form_id);
@@ -70,7 +68,7 @@ $(function() {
 			modalToggle(modalSuccess);
 
 			var timer = setTimeout(function() { 
-				modalToggle(modalSuccess) 
+				modalToggle(modalSuccess, true) 
 			}, 5000);
 		}
 	});
@@ -84,10 +82,14 @@ $(function() {
 	
 });
 
-function modalToggle(modalWindow) {
+function modalToggle(modalWindow, closeOption) {
 	var modal = modalWindow || "modal";
 
-	$("body, ." + modal).toggleClass("modal-active");
+	if (closeOption) {
+		$("body, ." + modal).removeClass("modal-active");
+	} else {
+		$("body, ." + modal).toggleClass("modal-active");
+	}	
 
 	if( $(".mob-menu").hasClass("opened") ) {
 		mobMenuToggle();
